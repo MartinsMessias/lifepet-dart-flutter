@@ -24,15 +24,15 @@ class _FormPetScreenState extends State<FormPetScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                TextField(
+                TextFormField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(labelText: "Nome do pet"),
                 ),
-                TextField(
+                TextFormField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(labelText: "Bio"),
                 ),
-                TextField(
+                TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(labelText: "Idade"),
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lifepetapp/models/pet_model.dart';
+import 'package:lifepetapp/screens/form_pet_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -17,7 +18,13 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-          onPressed: (){},
+          onPressed: (){
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => FormPetScreen(),
+              ),
+            );
+          },
           tooltip: 'Cadastrar um dog',
           label: Text('Cadastrar'),
         icon: Icon(Icons.pets),

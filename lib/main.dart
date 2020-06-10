@@ -13,7 +13,7 @@ class Main extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       title: "Pet Life",
-      home: FormPetScreen(),
+      home: new HomeScreen(),
     );
   }
 }
