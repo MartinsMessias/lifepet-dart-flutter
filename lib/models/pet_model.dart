@@ -16,7 +16,7 @@ class Pet {
 var pets = [
   Pet(
     nome: "Dogenilson",
-    imageUrl: "assets/images/dog1.jpg",
+    imageUrl: "assets/dog1.jpg",
     descricao: "Um dog",
     idade: 2,
     sexo: "Macho",
@@ -25,7 +25,7 @@ var pets = [
   ),
   Pet(
       nome: "Catioro",
-      imageUrl: "assets/images/dog2.jpeg",
+      imageUrl: "assets/dog2.jpg",
       descricao: "Outro dog",
       idade: 1,
       sexo: "Macho",
