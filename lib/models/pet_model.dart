@@ -31,5 +31,23 @@ var pets = [
       sexo: "Macho",
       bio: "Brabo",
       id: "2"
+  ),
+  Pet(
+      nome: "Dogenilson",
+      imageUrl: "assets/dog1.jpg",
+      descricao: "Um dog",
+      idade: 2,
+      sexo: "Macho",
+      bio: "Manso",
+      id: "3"
+  ),
+  Pet(
+      nome: "Catioro",
+      imageUrl: "assets/dog2.jpg",
+      descricao: "Outro dog",
+      idade: 1,
+      sexo: "Macho",
+      bio: "Brabo",
+      id: "4"
   )
 ];
