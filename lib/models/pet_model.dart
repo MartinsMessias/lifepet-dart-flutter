@@ -20,6 +20,7 @@ var pets = [
     descricao: "Um dog",
     idade: 2,
     sexo: "Macho",
+    cor: "Marrom",
     bio: "Manso",
     id: "1"
   ),
@@ -29,6 +30,7 @@ var pets = [
       descricao: "Outro dog",
       idade: 1,
       sexo: "Macho",
+      cor: "Marrom",
       bio: "Brabo",
       id: "2"
   ),
@@ -38,6 +40,7 @@ var pets = [
       descricao: "Um dog",
       idade: 2,
       sexo: "Macho",
+      cor: "Marrom",
       bio: "Manso",
       id: "3"
   ),
@@ -48,6 +51,7 @@ var pets = [
       idade: 1,
       sexo: "Macho",
       bio: "Brabo",
+      cor: "Marrom",
       id: "4"
   )
 ];

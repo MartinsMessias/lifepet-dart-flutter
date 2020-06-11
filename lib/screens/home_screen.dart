@@ -7,8 +7,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+//      appBar: AppBar(
+//        backgroundColor: Colors.redAccent,
+//        title:Text('Pet Life'),
+//        centerTitle: true,
+//      ),
       backgroundColor: Colors.white,
-      body: SafeArea(
+      body: Container(
+        margin: EdgeInsets.only(top: 25),
         child: ListView.builder(
           itemCount: pets.length,
           itemBuilder: (context, index){
