@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lifepetapp/models/pet_model.dart';
 import 'package:lifepetapp/screens/form_pet_screen.dart';
+import 'package:lifepetapp/screens/pet/perfil_pet_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -35,7 +36,13 @@ class HomeScreen extends StatelessWidget {
 
   Widget _petCard(BuildContext context, int index){
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) => PerfilPetScreen(pet: pets[index]),
+          ),
+        );
+      },
       child: Padding(
         padding: EdgeInsets.only(bottom: 30),
         child: Column(
