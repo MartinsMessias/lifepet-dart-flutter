@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:lifepetapp/models/pet_model.dart';
+import 'package:lifepetapp/widgets/custom_navbar.dart';
 
 class PerfilPetScreen extends StatelessWidget {
   final Pet pet;
@@ -144,8 +145,17 @@ class PerfilPetScreen extends StatelessWidget {
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
               ),
-            )
+            ),
           ],
+        ),
+      ),
+      bottomNavigationBar: CustomNavbar(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        backgroundColor: Colors.redAccent,
+        child: Icon(
+          Icons.edit,
         ),
       ),
     );
