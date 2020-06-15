@@ -15,7 +15,7 @@ class Main extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       title: "Pet Life",
-      home: new RemediosPetScreen(pet: pets[0]),
+      home: new HomeScreen(),
     );
   }
 }
