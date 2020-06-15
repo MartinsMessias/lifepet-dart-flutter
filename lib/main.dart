@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lifepetapp/screens/home_screen.dart';
-import 'package:lifepetapp/screens/form_pet_screen.dart';
-import 'package:lifepetapp/screens/pet/perfil_pet_screen.dart';
+import 'package:lifepetapp/screens/pet/remedios_pet_screen.dart';
+
+import 'models/pet_model.dart';
 
 void main() => runApp(Main());
 
@@ -14,7 +15,7 @@ class Main extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       title: "Pet Life",
-      home: new HomeScreen(),
+      home: new RemediosPetScreen(pet: pets[0]),
     );
   }
 }
