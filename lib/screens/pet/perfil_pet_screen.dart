@@ -4,6 +4,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:lifepetapp/models/pet_model.dart';
 import 'package:lifepetapp/widgets/custom_navbar.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PerfilPetScreen extends StatelessWidget {
   final Pet pet;
@@ -15,31 +16,28 @@ class PerfilPetScreen extends StatelessWidget {
       margin: EdgeInsets.all(10),
       width: 100,
       decoration: BoxDecoration(
-        color: Colors.red[50],
-        borderRadius: BorderRadius.circular(20)
-      ),
+          color: Colors.red[50], borderRadius: BorderRadius.circular(20)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
             label,
             style: TextStyle(
-              fontFamily: "Montserrat",
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: Colors.red
-            ),
-          ),
-          SizedBox(height: 8,),
-          Text(
-            informacao,
-            style: TextStyle(
                 fontFamily: "Montserrat",
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: Colors.red),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Text(informacao,
+              style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
-            ),
-          ),
+              ))),
         ],
       ),
     );
@@ -92,13 +90,10 @@ class PerfilPetScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(
-                    pet.nome,
-                    style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold),
-                  )
+                  Text(pet.nome,
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold)))
                 ],
               ),
             ),
@@ -109,14 +104,12 @@ class PerfilPetScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(
-                    pet.descricao,
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 16,
-                      color: Colors.grey,
-                    ),
-                  )
+                  Text(pet.descricao,
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                      )))
                 ],
               ),
             ),
@@ -137,11 +130,11 @@ class PerfilPetScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 25, horizontal: 40),
               child: Text(
                 pet.bio,
-                style: TextStyle(
-                  fontFamily: "Montserrat",
+                style: GoogleFonts.montserrat(
+                    textStyle: TextStyle(
                   fontSize: 16,
                   height: 1.5,
-                ),
+                )),
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -152,7 +145,7 @@ class PerfilPetScreen extends StatelessWidget {
       bottomNavigationBar: CustomNavbar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: () {},
         backgroundColor: Colors.redAccent,
         child: Icon(
           Icons.edit,
