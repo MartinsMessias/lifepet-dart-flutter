@@ -78,7 +78,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
                   minWidth: 40,
                   onPressed: (){
                     setState(() {
-                      widget.paginaAberta = 2;
+                      widget.paginaAberta = 3;
                     });
                   },
                   child: Column(
@@ -86,12 +86,12 @@ class _CustomNavbarState extends State<CustomNavbar> {
                     children: <Widget>[
                       Icon(
                         Icons.local_hospital,
-                        color: widget.paginaAberta == 2 ? Colors.redAccent : Colors.grey,
+                        color: widget.paginaAberta == 3 ? Colors.redAccent : Colors.grey,
                       ),
                       Text(
-                        'Consulta',
+                        'Consultas',
                         style: TextStyle(
-                            color: widget.paginaAberta == 2? Colors.redAccent : Colors.grey,
+                          color: widget.paginaAberta == 3 ? Colors.redAccent : Colors.grey,
                         ),
                       )
                     ],
@@ -101,7 +101,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
                   minWidth: 40,
                   onPressed: (){
                     setState(() {
-                      widget.paginaAberta = 3;
+                      widget.paginaAberta = 4;
                     });
                   },
                   child: Column(
@@ -109,19 +109,70 @@ class _CustomNavbarState extends State<CustomNavbar> {
                     children: <Widget>[
                       Icon(
                         Icons.event_note,
-                        color: widget.paginaAberta == 3 ? Colors.redAccent : Colors.grey,
+                        color: widget.paginaAberta == 4 ? Colors.redAccent : Colors.grey,
                       ),
                       Text(
-                        'Anotações',
+                        'Notas',
                         style: TextStyle(
-                            color: widget.paginaAberta == 3 ? Colors.redAccent : Colors.grey,
+                            color: widget.paginaAberta == 4 ? Colors.redAccent : Colors.grey,
                         ),
                       )
                     ],
                   ),
                 ),
               ],
-            )
+            ),
+//            Row(
+//              crossAxisAlignment: CrossAxisAlignment.stretch,
+//              children: <Widget>[
+//                MaterialButton(
+//                  minWidth: 40,
+//                  onPressed: (){
+//                    setState(() {
+//                      widget.paginaAberta = 2;
+//                    });
+//                  },
+//                  child: Column(
+//                    mainAxisAlignment: MainAxisAlignment.center,
+//                    children: <Widget>[
+//                      Icon(
+//                        Icons.local_hospital,
+//                        color: widget.paginaAberta == 2 ? Colors.redAccent : Colors.grey,
+//                      ),
+//                      Text(
+//                        'Consulta',
+//                        style: TextStyle(
+//                            color: widget.paginaAberta == 2? Colors.redAccent : Colors.grey,
+//                        ),
+//                      )
+//                    ],
+//                  ),
+//                ),
+//                MaterialButton(
+//                  minWidth: 40,
+//                  onPressed: (){
+//                    setState(() {
+//                      widget.paginaAberta = 3;
+//                    });
+//                  },
+//                  child: Column(
+//                    mainAxisAlignment: MainAxisAlignment.center,
+//                    children: <Widget>[
+//                      Icon(
+//                        Icons.event_note,
+//                        color: widget.paginaAberta == 3 ? Colors.redAccent : Colors.grey,
+//                      ),
+//                      Text(
+//                        'Anotações',
+//                        style: TextStyle(
+//                            color: widget.paginaAberta == 3 ? Colors.redAccent : Colors.grey,
+//                        ),
+//                      )
+//                    ],
+//                  ),
+//                ),
+//              ],
+//            )
           ],
         ),
       ),

@@ -45,26 +45,27 @@ class PerfilPetScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Stack(
-              children: <Widget>[
-                Hero(
-                  tag: pet.id,
-                  child: Container(
-                    width: double.infinity,
-                    height: 350,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(pet.imageUrl),
-                            fit: BoxFit.cover)),
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Stack(
+                children: <Widget>[
+                  Hero(
+                    tag: pet.id,
+                    child: Container(
+                      width: double.infinity,
+                      height: 350,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(pet.imageUrl),
+                              fit: BoxFit.cover)),
+                    ),
                   ),
-                ),
                 Container(
-                  margin: EdgeInsets.only(top: 35, left: 10),
+                  margin: EdgeInsets.only(top: 3, left: 10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.white),
@@ -78,77 +79,78 @@ class PerfilPetScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 40,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(pet.nome,
-                      style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.bold)))
                 ],
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 40,
+              SizedBox(
+                height: 20,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(pet.descricao,
-                      style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey,
-                      )))
-                ],
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 40,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(pet.nome,
+                        style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                fontSize: 24, fontWeight: FontWeight.bold)))
+                  ],
+                ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 30),
-              height: 120,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  _cartaoInfoPet("Idade", pet.idade.toString()),
-                  _cartaoInfoPet("Sexo", pet.sexo.toString()),
-                  _cartaoInfoPet("Cor", pet.cor.toString()),
-                  _cartaoInfoPet("ID", pet.id.toString()),
-                ],
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 40,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(pet.descricao,
+                        style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        )))
+                  ],
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 25, horizontal: 40),
-              child: Text(
-                pet.bio,
-                style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
-                  fontSize: 16,
-                  height: 1.5,
-                )),
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
+              Container(
+                margin: EdgeInsets.only(top: 30),
+                height: 120,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    _cartaoInfoPet("Idade", pet.idade.toString()),
+                    _cartaoInfoPet("Sexo", pet.sexo.toString()),
+                    _cartaoInfoPet("Cor", pet.cor.toString()),
+                    _cartaoInfoPet("ID", pet.id.toString()),
+                  ],
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 25, horizontal: 40),
+                child: Text(
+                  pet.bio,
+                  style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                    fontSize: 16,
+                    height: 1.5,
+                  )),
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-      bottomNavigationBar: CustomNavbar(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.redAccent,
-        child: Icon(
-          Icons.edit,
+        bottomNavigationBar: CustomNavbar(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: Colors.redAccent,
+          child: Icon(
+            Icons.edit,
+          ),
         ),
       ),
     );
