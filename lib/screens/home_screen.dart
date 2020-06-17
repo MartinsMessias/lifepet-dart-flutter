@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
 //      ),
         backgroundColor: Colors.white,
         body: Container(
+          color: Colors.white,
           // margin: EdgeInsets.only(top: 25),
           child: ListView.builder(
             itemCount: pets.length,
