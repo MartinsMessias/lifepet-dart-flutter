@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lifepetapp/models/pet_model.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lifepetapp/screens/pet/form_remedio_pet_screen.dart';
 import 'package:lifepetapp/widgets/custom_navbar.dart';
 
 class RemediosPetScreen extends StatelessWidget {
@@ -56,7 +57,7 @@ class RemediosPetScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    'Remédios',
+                    'Remédios do ${pet.nome}',
                     style: GoogleFonts.montserrat(
                         textStyle: TextStyle(
                             fontSize: 24,
@@ -240,7 +241,13 @@ class RemediosPetScreen extends StatelessWidget {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-          onPressed: (){},
+          onPressed: (){
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => FormRemedioPetScreen(pet: pet),
+              ),
+            );
+          },
           backgroundColor: Colors.redAccent,
           child: Icon(Icons.add),
       ),

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:lifepetapp/models/pet_model.dart';
 
 class FormRemedioPetScreen extends StatelessWidget {
+  final Pet pet;
+
+  FormRemedioPetScreen({this.pet});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cadastro de remédio'),
+        title: Text('Cadastro de remédio do ${pet.nome}'),
       ),
       body: SingleChildScrollView(
         child: Padding(

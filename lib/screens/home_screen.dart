@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:lifepetapp/models/pet_model.dart';
-import 'package:lifepetapp/screens/form_pet_screen.dart';
-import 'package:lifepetapp/screens/pet/perfil_pet_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lifepetapp/models/pet_model.dart';
+import 'package:lifepetapp/screens/pet/perfil_pet_screen.dart';
+import 'package:lifepetapp/services/pet_service.dart';
+
+import 'form_pet_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+
+  PetService service = PetService();
+  List<Pet> pets = List();
+
+  HomeScreen(){
+    _getAllPets();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-//      appBar: AppBar(
-//        backgroundColor: Colors.redAccent,
-//        title:Text('Pet Life'),
-//        centerTitle: true,
-//      ),
         backgroundColor: Colors.white,
         body: Container(
           color: Colors.white,
@@ -95,4 +100,10 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+  void _getAllPets(){
+    List list = service.getAllPets();
+    pets = list;
+  }
 }
+
+

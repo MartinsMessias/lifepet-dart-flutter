@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lifepetapp/models/pet_model.dart';
+import 'package:lifepetapp/screens/home_screen.dart';
+import 'package:lifepetapp/screens/pet/form_remedio_pet_screen.dart';
+import 'package:lifepetapp/services/pet_service.dart';
 
 class FormPetScreen extends StatefulWidget {
   @override
@@ -11,6 +15,13 @@ class _FormPetScreenState extends State<FormPetScreen> {
 
   String corPet = "Branco";
   String sexoPet = "Macho";
+
+  final _nomeController = TextEditingController();
+  final _bioController = TextEditingController();
+  final _idadeController = TextEditingController();
+  final _descricaoController = TextEditingController();
+
+  PetService service = PetService();
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,14 +38,17 @@ class _FormPetScreenState extends State<FormPetScreen> {
                 TextFormField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(labelText: "Nome do pet"),
+                  controller: _nomeController,
                 ),
                 TextFormField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(labelText: "Bio"),
+                  controller: _bioController,
                 ),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(labelText: "Idade"),
+                  controller: _idadeController,
                 ),
                 DropdownButtonFormField(
                   value: sexoPet,
@@ -52,6 +66,7 @@ class _FormPetScreenState extends State<FormPetScreen> {
                 TextField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(labelText: "Descrição"),
+                  controller: _descricaoController,
                 ),
                 DropdownButtonFormField(
                   value: corPet,
@@ -72,7 +87,22 @@ class _FormPetScreenState extends State<FormPetScreen> {
                     height: 50,
                     width: double.infinity,
                     child: RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Pet newPet = Pet(
+                          nome: _nomeController.text,
+                          bio: _bioController.text,
+                          idade: int.parse(_idadeController.text),
+                          sexo: sexoPet,
+                          descricao: _descricaoController.text,
+                          cor: corPet
+                        );
+                        service.addPet(newPet);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => HomeScreen(),
+                          )
+                        );
+                      },
                       color: Colors.redAccent,
                       child: Text(
                         'Cadastrar',
