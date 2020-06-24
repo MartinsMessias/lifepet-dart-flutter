@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:lifepetapp/models/pet_model.dart';
+import 'package:lifepetapp/models/remedio_model.dart';
+import 'package:lifepetapp/screens/home_screen.dart';
+import 'package:lifepetapp/screens/pet/remedios_pet_screen.dart';
+import 'package:lifepetapp/services/pet_service.dart';
+import 'package:lifepetapp/services/remedio_service.dart';
 
 class FormRemedioPetScreen extends StatelessWidget {
-  final Pet pet;
+  String id;
+  final _nomeControler = TextEditingController();
+  final _dataControler = TextEditingController();
+  final PetService petService = PetService();
+  final RemedioService remedioService = RemedioService();
+  Pet pet;
 
-  FormRemedioPetScreen({this.pet});
+  FormRemedioPetScreen({this.id}){
+    _getPet(id);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,11 +32,13 @@ class FormRemedioPetScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 TextFormField(
+                  controller: _nomeControler,
                   keyboardType: TextInputType.text,
                   style: TextStyle(fontSize: 20),
                   decoration: InputDecoration(labelText: 'Nome do remédio'),
                 ),
                 TextFormField(
+                  controller: _dataControler,
                   keyboardType: TextInputType.datetime,
                   style: TextStyle(fontSize: 20),
                   decoration: InputDecoration(labelText: 'Dia'),
@@ -51,7 +66,19 @@ class FormRemedioPetScreen extends StatelessWidget {
                     height: 40,
                     child: RaisedButton(
                       splashColor: Colors.white10,
-                      onPressed: (){},
+                      onPressed: (){
+                        Remedio novoRemedio = Remedio(
+                          nome: _nomeControler.text,
+                          data: _dataControler.text,
+                          pet: pet,
+                        );
+                        remedioService.addRemedio(novoRemedio);
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (_) => RemediosPetScreen(id: pet.id,),
+                          )
+                        );
+                      },
                       color: Colors.redAccent,
                       child: Text('Cadastrar', style: TextStyle(
                         color: Colors.white, fontSize: 16
@@ -65,5 +92,8 @@ class FormRemedioPetScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+  void _getPet(String id){
+    pet = petService.getPet(id);
   }
 }
