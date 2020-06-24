@@ -65,7 +65,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
                     });
                     Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                          builder: (_) => RemediosPetScreen(pet: widget.pet),
+                          builder: (_) => RemediosPetScreen(id: widget.pet.id),
                         )
                     );
                   },
