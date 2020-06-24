@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lifepetapp/screens/home_screen.dart';
-import 'package:lifepetapp/screens/pet/remedios_pet_screen.dart';
-
-import 'models/pet_model.dart';
 
 void main() => runApp(Main());
 

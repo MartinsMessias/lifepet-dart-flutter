@@ -1,15 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
 import 'package:lifepetapp/models/pet_model.dart';
+import 'package:lifepetapp/services/pet_service.dart';
 import 'package:lifepetapp/widgets/custom_navbar.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PerfilPetScreen extends StatelessWidget {
-  final Pet pet;
-
-  PerfilPetScreen({this.pet});
+  final String id;
+  PetService service = PetService();
+  Pet pet;
+  PerfilPetScreen({this.id}){_getPet(id);}
 
   Widget _cartaoInfoPet(String label, String informacao) {
     return Container(
@@ -155,4 +154,8 @@ class PerfilPetScreen extends StatelessWidget {
       ),
     );
   }
+  void _getPet(String id){
+    pet = service.getPet(id);
+  }
 }
+

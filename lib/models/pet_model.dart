@@ -10,5 +10,5 @@ class Pet {
 
   Pet({
     this.nome, this.imageUrl, this.descricao, this.idade, this.sexo, this.cor, this.bio, this.id
-});
+  });
 }

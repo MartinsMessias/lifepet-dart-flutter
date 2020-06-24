@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => PerfilPetScreen(pet: pets[index]),
+            builder: (_) => PerfilPetScreen(id: pets[index].id),
           ),
         );
       },
