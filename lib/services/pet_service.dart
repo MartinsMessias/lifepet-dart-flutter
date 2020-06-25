@@ -55,4 +55,13 @@ class PetService {
         id: Random().nextInt(100).toString(),
         imageUrl: 'assets/dog2.jpg'));
   }
+  void editPet(String id, newPet){
+    Pet petEditar = getPet(id);
+    petEditar.nome = newPet.nome;
+    petEditar.bio = newPet.bio;
+    petEditar.idade = newPet.idade;
+    petEditar.sexo = newPet.sexo;
+    petEditar.cor = newPet.cor;
+    petEditar.descricao = newPet.descricao;
+  }
 }

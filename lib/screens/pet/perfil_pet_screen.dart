@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lifepetapp/models/pet_model.dart';
+import 'package:lifepetapp/screens/form_pet_screen.dart';
 import 'package:lifepetapp/services/pet_service.dart';
 import 'package:lifepetapp/widgets/custom_navbar.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +9,9 @@ class PerfilPetScreen extends StatelessWidget {
   final String id;
   PetService service = PetService();
   Pet pet;
-  PerfilPetScreen({this.id}){_getPet(id);}
+  PerfilPetScreen({this.id}) {
+    _getPet(id);
+  }
 
   Widget _cartaoInfoPet(String label, String informacao) {
     return Container(
@@ -63,21 +66,21 @@ class PerfilPetScreen extends StatelessWidget {
                               fit: BoxFit.cover)),
                     ),
                   ),
-                Container(
-                  margin: EdgeInsets.only(top: 3, left: 10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: Colors.white),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    icon: Icon(
-                      Icons.arrow_back,
-                      color: Colors.redAccent,
+                  Container(
+                    margin: EdgeInsets.only(top: 3, left: 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.white),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      icon: Icon(
+                        Icons.arrow_back,
+                        color: Colors.redAccent,
+                      ),
                     ),
                   ),
-                ),
                 ],
               ),
               SizedBox(
@@ -142,10 +145,17 @@ class PerfilPetScreen extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: CustomNavbar(pet: pet, paginaAberta: 0,),
+        bottomNavigationBar: CustomNavbar(
+          pet: pet,
+          paginaAberta: 0,
+        ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => FormPetScreen(id: pet.id),
+            ));
+          },
           backgroundColor: Colors.redAccent,
           child: Icon(
             Icons.edit,
@@ -154,8 +164,8 @@ class PerfilPetScreen extends StatelessWidget {
       ),
     );
   }
-  void _getPet(String id){
+
+  void _getPet(String id) {
     pet = service.getPet(id);
   }
 }
-
