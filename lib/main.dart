@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lifepetapp/screens/home_screen.dart';
+import 'package:lifepetapp/screens/login_screen.dart';
 
 void main() => runApp(Main());
 
@@ -12,7 +13,7 @@ class Main extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       title: "Pet Life",
-      home: new HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
